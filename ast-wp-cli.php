@@ -24,7 +24,7 @@ if ( ! class_exists( 'Astra_Update_Auto_Version_WP_CLI' ) && class_exists( 'WP_C
          */
         public function update_auto_version( $args = array(), $assoc_args = array() ) {
 
-            $astra_settings = get_site_option( 'astra-settings' );
+            $astra_settings = get_option( 'astra-settings' );
 
             if( isset( $astra_settings['theme-auto-version'] ) ) {
                 WP_CLI::line( 'Before update - ' . $astra_settings['theme-auto-version'] );
@@ -34,7 +34,7 @@ if ( ! class_exists( 'Astra_Update_Auto_Version_WP_CLI' ) && class_exists( 'WP_C
 
                 WP_CLI::line( 'After update - ' . $astra_settings['theme-auto-version'] );
 
-                update_site_option( 'astra-settings', $astra_settings );
+                update_option( 'astra-settings', $astra_settings );
             }
         }
 
