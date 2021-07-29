@@ -7,7 +7,7 @@
  * Domain Path:     /languages
  * Version:         1.0.0
  *
- * @package         WP_CLI
+ * @package         Ast_WP_CLI
  */
 
 if ( ! class_exists( 'Astra_Update_Auto_Version_WP_CLI' ) && class_exists( 'WP_CLI_Command' ) ) {
@@ -15,16 +15,16 @@ if ( ! class_exists( 'Astra_Update_Auto_Version_WP_CLI' ) && class_exists( 'WP_C
     class Astra_Update_Auto_Version_WP_CLI extends WP_CLI_Command {
 
         /**
-		 * Use: Update 'theme-auto-version' from 'astra-settings'.
-		 *
-		 * @since x.x.x
-		 * @param  array $args       Arguments.
-		 * @param  array $assoc_args Associated Arguments.
-		 * @return void.
-		 */
-		public function update_auto_version( $args = array(), $assoc_args = array() ) {
+         * Use: Update 'theme-auto-version' from 'astra-settings'.
+         *
+         * @since x.x.x
+         * @param  array $args       Arguments.
+         * @param  array $assoc_args Associated Arguments.
+         * @return void.
+         */
+        public function update_auto_version( $args = array(), $assoc_args = array() ) {
 
-			$astra_settings = get_site_option( 'astra-settings' );
+            $astra_settings = get_site_option( 'astra-settings' );
 
             if( isset( $astra_settings['theme-auto-version'] ) ) {
                 WP_CLI::line( 'Before update - ' . $astra_settings['theme-auto-version'] );
@@ -36,7 +36,7 @@ if ( ! class_exists( 'Astra_Update_Auto_Version_WP_CLI' ) && class_exists( 'WP_C
 
                 update_site_option( 'astra-settings', $astra_settings );
             }
-		}
+        }
 
         /**
          * Just confirming the command.
